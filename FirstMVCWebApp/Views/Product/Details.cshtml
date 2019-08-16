@@ -1,0 +1,24 @@
+﻿@model FirstMVCWebApp.Models.Product 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    <h1>Product detale</h1>    
+    <div>
+        <h2>@ViewBag.Product.Name</h2>
+        <p>Price:@ViewBag.Product.Price </p>
+        <p>Description:</b> @ViewBag.Product.Description</p>
+
+        <p>Volume: @ViewData["volume"] </p>
+        <p>Volume: @ViewData["volume1"] </p>
+
+        <p>@DateTime.Now.ToShortDateString()</p>
+        <p>@Request.Url</p>
+
+        <p>Name: @Model.Name</p>
+
+    </div>
+
