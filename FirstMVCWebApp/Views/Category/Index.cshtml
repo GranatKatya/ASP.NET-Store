@@ -1,0 +1,25 @@
+﻿@model  FirstMVCWebApp.Models.Category
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using FirstMVCWebApp.Models
+
+<h2>Categories list </h2>
+
+@foreach (Category category in ViewBag.Categories)
+{
+<div>
+    @*<p> @category.Id </p>*@
+    <h5>@category.Name</h5>
+    <h2>@Html.ActionLink("Category", "CategoryDetails", new { id = category.Id })</h2>
+    @foreach (var product in category.Products)
+    {
+
+        <p>@product.Name</p>
+        <p>@product.Price</p>
+    }
+</div>
+}

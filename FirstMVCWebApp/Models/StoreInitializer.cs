@@ -12,14 +12,43 @@ namespace FirstMVCWebApp.Models
 
         protected override void Seed(StoreContext context)
         {
+
+            Category c1 = new Category
+            {
+                Id = 1,
+                Name = "For body",
+
+            };
+            Category c2 = new Category
+            {
+                Id = 2,
+                Name = "For hair",
+
+            };
+            Category c3 = new Category
+            {
+                Id = 3,
+                Name = "For face",
+                
+
+            };
+            context.Categories.Add(c1);
+            context.Categories.Add(c2);
+            context.Categories.Add(c3);
+            context.SaveChanges();
+
+
+
             context.Products.Add(new Product {
-                Id=1,
+                Id = 1,
                 Name = "Бомбочка Для Ванны «Spice Boom»",
                 Price = 90m,
                 Description = "Способ применения: опустить бомбочку в ванну с теплой водой, дать раствориться. Принимать ванну с удовольствием и пользой!",
                 Volume = 325,
                 InStock = true,
-                Src= "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c1,
+                CategoryId = c1.Id
             });
 
             context.Products.Add(new Product
@@ -30,7 +59,9 @@ namespace FirstMVCWebApp.Models
                 Description = "Композиция эфирных масел розмарина и бергамота вмиг снимет усталость и вялость, повысит внимательность и улучшит настроение. ",
                 Volume = 200,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom1.jpg"
+                Src = "~/Img/bomb_spicyboom1.jpg",
+                Category = c1,
+                CategoryId = c1.Id
             });
 
             context.Products.Add(new Product
@@ -41,7 +72,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/nabor_serdce_big.jpg"
+                Src = "~/Img/nabor_serdce_big.jpg",
+                Category = c1,
+                CategoryId = c1.Id
             });
 
             context.Products.Add(new Product
@@ -52,7 +85,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/nabor_serdce_big2.jpg"
+                Src = "~/Img/nabor_serdce_big2.jpg",
+                Category = c2,
+                CategoryId = c2.Id
             });
 
             context.Products.Add(new Product
@@ -63,7 +98,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/nabor_pink.jpg"
+                Src = "~/Img/nabor_pink.jpg",
+                Category = c3,
+                CategoryId = c3.Id
             });
 
             context.Products.Add(new Product
@@ -74,7 +111,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c3,
+                CategoryId = c3.Id
             });
 
             context.Products.Add(new Product
@@ -85,7 +124,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c3,
+                CategoryId = c3.Id
             });
 
             context.Products.Add(new Product
@@ -96,7 +137,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "Img//bomb_spicyboom2.jpg"
+                Src = "Img//bomb_spicyboom2.jpg",
+                Category = c2,
+                CategoryId = c2.Id
             });
 
             context.Products.Add(new Product
@@ -107,7 +150,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c2,
+                CategoryId = c2.Id
             });
 
             context.Products.Add(new Product
@@ -118,7 +163,9 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c3,
+                CategoryId = c3.Id
             });
 
             context.Products.Add(new Product
@@ -129,10 +176,12 @@ namespace FirstMVCWebApp.Models
                 Description = "А еще у мыла «Гранатовый шелк» нежный кремовый аромат граната, который влюбляет в себя с первого вдоха!",
                 Volume = 100,
                 InStock = true,
-                Src = "~/Img/bomb_spicyboom2.jpg"
+                Src = "~/Img/bomb_spicyboom2.jpg",
+                Category = c2,
+                CategoryId = c2.Id
             });
 
-            context.SaveChanges();
+            context.SaveChanges();  
 
             base.Seed(context);
         }

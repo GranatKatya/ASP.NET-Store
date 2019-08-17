@@ -15,13 +15,20 @@
 
     <p>Do you realy want to delete item?</p>
 
-    <div >
-        <h2>@ViewBag.Product.Name</h2>
+    <div>
+        @*<h2>@ViewBag.Product.Name</h2>
 
         <p> Price: @ViewBag.Product.Price</p>
         <p> Description: @ViewBag.Product.Description</p>
         <p> Volume : @ViewBag.Product.Volume </p>
-        <p> InStock: @ViewBag.Product.InStock</p>
+        <p> InStock: @ViewBag.Product.InStock</p>*@
+        <h2>@Model.Name</h2>
+
+        <p> Price: @Model.Price</p>
+        <p> Description: @Model.Description</p>
+        <p> Volume : @Model.Volume </p>
+        <p> InStock: @Model.InStock</p>
+        <p>Category:    @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categ as SelectList)</p>
 
     </div>
 

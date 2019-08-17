@@ -25,22 +25,22 @@
 </style>
 
 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <style>
-                .btn {
-                    background-color: DodgerBlue;
-                    border: none;
-                    color: white;
-                    padding: 12px 16px;
-                    font-size: 16px;
-                    cursor: pointer;
-                }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-                    /* Darker background on mouse-over */
-                    .btn:hover {
-                        background-color: RoyalBlue;
-                    }
-            </style>
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+</style>
 
 
 
@@ -62,24 +62,26 @@
 
     @foreach (Product product in ViewBag.Products)
     {
-    <div class="e" style="background-color: beige; height: 490px; width: 49%;  margin: 5px; border: 1px solid black; text-align: center;">
+        <div class="e" style="background-color: beige; height: 490px; width: 49%;  margin: 5px; border: 1px solid black; text-align: center;">
 
-        <div style="width: 100%; ">
+            @*<div style="width: 100%; ">*@
             <h2>@Html.ActionLink(product.Name, "Details", new { id = product.Id })</h2>
-            <button class="btn"><i class="fa fa-trash"> @Html.ActionLink("Delete", "Delete", new { id = product.Id })</i></button>
+            @*</div>*@
+
+            @*<h4 id="actionhover">@Html.ActionLink(product.Name, "Details", new { id = product.Id }, new { style = "text-decoration:none; color : black; " })</h4>*@
+            <img src="@Url.Content(@product.Src)" style="margin: 4px; width: 70%; height: 70%;" />
+            <h5>@product.Description</h5>
+            <p>Price: @product.Price $</p>
+
+            <div>
+                <button class="btn"><i class="fa fa-trash"> @Html.ActionLink("Delete", "Delete", new { id = product.Id })</i></button>
+                <button class="btn"><i class="fa fa-edit"> @Html.ActionLink("Edit", "Edit", new { id = product.Id })</i></button>
+            </div>
+
+
+
+
         </div>
-
-        @*<h4 id="actionhover">@Html.ActionLink(product.Name, "Details", new { id = product.Id }, new { style = "text-decoration:none; color : black; " })</h4>*@
-        <img src="@Url.Content(@product.Src)" style="margin: 4px; width: 70%; height: 70%;" />
-        <h5>@product.Description</h5>
-        <p>Price: @product.Price $</p>
-
-
-
-
-
-
-    </div>
     }
 
 </div>                                     

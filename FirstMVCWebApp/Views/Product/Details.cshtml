@@ -8,17 +8,21 @@
 
     <h1>Product detale</h1>    
     <div>
-        <h2>@ViewBag.Product.Name</h2>
+        @*<h2>@ViewBag.Product.Name</h2>
         <p>Price:@ViewBag.Product.Price </p>
-        <p>Description:</b> @ViewBag.Product.Description</p>
+        <p>Description:</b> @ViewBag.Product.Description</p>*@
+        <h2>@Model.Name</h2>
+        <p>Price:@Model.Price </p>
+        <p>Description:</b> @Model.Description</p>
 
-        <p>Volume: @ViewData["volume"] </p>
-        <p>Volume: @ViewData["volume1"] </p>
+        @*<p>Volume: @ViewData["volume"] </p>
+        <p>Volume: @ViewData["volume1"] </p>*@
 
         <p>@DateTime.Now.ToShortDateString()</p>
         <p>@Request.Url</p>
 
         <p>Name: @Model.Name</p>
 
+        <p>Category:    @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categ as SelectList)</p>
     </div>
 

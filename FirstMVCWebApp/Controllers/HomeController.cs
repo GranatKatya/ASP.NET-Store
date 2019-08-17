@@ -17,14 +17,15 @@ namespace FirstMVCWebApp.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            // return View();
+            return View("~/Views/Home/About.cshtml");
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View("About");
         }
 
         public ContentResult GetContent()
@@ -35,6 +36,14 @@ namespace FirstMVCWebApp.Controllers
         public string GetString()
         {
             return "fdhgkdjfhgk";
+        }
+        public ActionResult StatusCode()
+        {
+            return new HttpStatusCodeResult(404);
+        }
+        public ActionResult Info()
+        {
+            return View();
         }
     }
 

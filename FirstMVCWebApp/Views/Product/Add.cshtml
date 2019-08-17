@@ -37,6 +37,12 @@
         @Html.LabelFor(model => model.Src)
         @Html.EditorFor(model => model.Src)
     </div>
+    <div>
+        @Html.LabelFor(model => model.Category)
+        @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categ as SelectList)
+    </div>
+
+   
 
     <div>
         <input type="submit" value="Create" />
