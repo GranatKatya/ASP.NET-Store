@@ -118,11 +118,11 @@ namespace FirstMVCWebApp.Controllers
 
         }
 
-        [HttpPost]
-        public ActionResult DeleteProduct()
-        {
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult DeleteProduct()
+        //{
+        //    return View();
+        //}
 
         [HttpGet]
         public async Task<ActionResult> Edit(int? id)

@@ -9,17 +9,19 @@
 
 <h2>Categories list </h2>
 
+<div>
+    <h2>@Html.ActionLink("Create category", "Create")</h2>
+</div>
+
 @foreach (Category category in ViewBag.Categories)
 {
 <div>
     @*<p> @category.Id </p>*@
-    <h5>@category.Name</h5>
-    <h2>@Html.ActionLink("Category", "CategoryDetails", new { id = category.Id })</h2>
-    @foreach (var product in category.Products)
-    {
+    <h4>@category.Name</h4>
+    <p>@Html.ActionLink("Category", "CategoryDetails", new { id = category.Id })</p>
+    <p>@Html.ActionLink("Edit category", "Edit", new { id = category.Id })</p>
+    <p>@Html.ActionLink("Delete category", "Delete", new { id = category.Id })</p>
 
-        <p>@product.Name</p>
-        <p>@product.Price</p>
-    }
+
 </div>
 }
